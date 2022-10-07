@@ -33,3 +33,4 @@ vwd.webinfo
 /api/obj/Debug
 /api.Tests/bin/Debug
 /api.Tests/obj/Debug
+/api/obj/Release
