@@ -1,11 +1,16 @@
 # Desafio Envixo 
-## Aplicação Web ASP .Net Core, faz cálculo em memória de juros compostos. O projeto possui duas API's:
 O objetivo deste teste é verificar as suas habilidades práticas como desenvolvedor .net na construção de APIs REST.
+
 Não é necessário desenvolver as interfaces em HTML/CSS/JS, você deve focar mais em desenvolver as APIs que serão consumidas pelo frontend em React.js.
+
 Você deve construir o projeto todo usando o framework web Spring (https://spring.io/) ou outro framework de desenvolvimento web similar para construção de APIs.
+
 Para banco de dados você deve usar o Postgres e a estrutura das tabelas, nomes, índices fica ao seu critério, será um ponto avaliado no teste também a organização e estruturação do banco de dados que você criará.
+
 Estamos com urgência na contratação, por isso pedimos a gentileza de entregar o teste o quanto antes. Quanto mais rápido você for com qualidade melhor, no cenário real do dia a dia, temos que fazer o nosso melhor com o menor prazo possível.
+
 Segue abaixo as telas do frontend, através dessas telas você deve desenvolver as APIs necessárias para o frontend funcionar conforme descrito abaixo.
+
 O objetivo principal do teste é criar um CRUD de produtos de e-commerce, com informações básicas sobre os produtos cadastrados. Lembre-se: concentre-se somente na construção das APIs.
 
 ### Instruções para rodar o projeto:
