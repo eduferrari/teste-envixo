@@ -17,46 +17,47 @@ O objetivo principal do teste é criar um CRUD de produtos de e-commerce, com in
 - Com o projeto rodando "instruções acima" acessar os endpoints usando o seguinte link `https://localhost:44385/swagger/ui/index`;
 
 ### Gerar token:
+- Esse token e usado para autenticar a requisição, foi usado **JWT** para a criação;
 - No Postman execurar o endpoit `https://localhost:44385/api/Token`:
 - Será necessário informar um email e uma senha: `eduardo.ferrari@outlook.com > 12345`;
 ~~~Script
->var form = new FormData();
->form.append("email", "eduardo.ferrari@outlook.com");
->form.append("senha", "12345");
->
->var settings = {
->  "url": "https://localhost:44385/api/Token",
->  "method": "POST",
->  "timeout": 0,
->  "processData": false,
->  "mimeType": "multipart/form-data",
->  "contentType": false,
->  "data": form
->};
+var form = new FormData();
+form.append("email", "eduardo.ferrari@outlook.com");
+form.append("senha", "12345");
 
->$.ajax(settings).done(function (response) {
->  console.log(response);
->});
+var settings = {
+  "url": "https://localhost:44385/api/Token",
+  "method": "POST",
+  "timeout": 0,
+  "processData": false,
+  "mimeType": "multipart/form-data",
+  "contentType": false,
+  "data": form
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
 ~~~
 
 ### Exemplo de como listar os produtos
 ~~~Script
->var form = new FormData();
->var settings = {
->  "url": "https://localhost:44385/api/Produto",
->  "method": "GET",
->  "timeout": 0,
->  "headers": {
->    "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySW5mbyI6IntcclxuICBcIklkXCI6IDEsXHJcbiAgXCJFbWFpbFwiOiBcImVkdWFyZG8uZmVycmFyaUBvdXRsb29rLmNvbVwiLFxyXG4gIFwiU2VuaGFcIjogXCI4MjdDQ0IwRUVBOEE3MDZDNEMzNEExNjg5MUY4NEU3QlwiLFxyXG4gIFwiTW9kdWxvc1wiOiBbXHJcbiAgICBcIlByb2R1dG9cIixcclxuICAgIFwiQ2F0ZWdvcmlhXCJcclxuICBdLFxyXG4gIFwiVmFsaWRhZGVcIjogXCIyMDIyLTEwLTA4VDAwOjAwOjAwXCJcclxufSIsIm5iZiI6MTY2NTE1OTk0NiwiZXhwIjoxNjY1MjQ2MzQ2LCJpYXQiOjE2NjUxNTk5NDYsImlzcyI6Imh0dHBzOi8vbG9jYWxob3N0OjQ0Mzg1IiwiYXVkIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NDQzODUifQ.iJLm9v2yE-3V7RONwDWRoPQ43lD2sAPkvs77JNIDgdk"
->  },
->  "processData": false,
->  "mimeType": "multipart/form-data",
->  "contentType": false,
->  "data": form
->};
->
->$.ajax(settings).done(function (response) {
->  console.log(response);
->});
+var form = new FormData();
+var settings = {
+  "url": "https://localhost:44385/api/Produto",
+  "method": "GET",
+  "timeout": 0,
+  "headers": {
+    "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySW5mbyI6IntcclxuICBcIklkXCI6IDEsXHJcbiAgXCJFbWFpbFwiOiBcImVkdWFyZG8uZmVycmFyaUBvdXRsb29rLmNvbVwiLFxyXG4gIFwiU2VuaGFcIjogXCI4MjdDQ0IwRUVBOEE3MDZDNEMzNEExNjg5MUY4NEU3QlwiLFxyXG4gIFwiTW9kdWxvc1wiOiBbXHJcbiAgICBcIlByb2R1dG9cIixcclxuICAgIFwiQ2F0ZWdvcmlhXCJcclxuICBdLFxyXG4gIFwiVmFsaWRhZGVcIjogXCIyMDIyLTEwLTA4VDAwOjAwOjAwXCJcclxufSIsIm5iZiI6MTY2NTE1OTk0NiwiZXhwIjoxNjY1MjQ2MzQ2LCJpYXQiOjE2NjUxNTk5NDYsImlzcyI6Imh0dHBzOi8vbG9jYWxob3N0OjQ0Mzg1IiwiYXVkIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NDQzODUifQ.iJLm9v2yE-3V7RONwDWRoPQ43lD2sAPkvs77JNIDgdk"
+  },
+  "processData": false,
+  "mimeType": "multipart/form-data",
+  "contentType": false,
+  "data": form
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
 ~~~
    
