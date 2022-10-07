@@ -30,3 +30,7 @@ vwd.webinfo
 /local_app.js
 [Mm]ysql/
 [Mm]edia/
+/api/obj/Debug
+/api.Tests/bin/Debug
+/api.Tests/obj/Debug
+/api/obj/Release
