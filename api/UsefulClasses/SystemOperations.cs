@@ -19,8 +19,6 @@ namespace api.UsefulClasses
 
                 using (dbEntities db = new dbEntities())
                 {
-
-
                     string savedFile = "";
 
                     if (sendFile.Count > 0)
