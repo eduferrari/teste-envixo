@@ -17,9 +17,10 @@ namespace api.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        public IQueryable<tbcategorias> ListaCategorias()
+        public IHttpActionResult ListaCategorias()
         {
-            return db.tbcategorias.AsNoTracking();
+            var listCategorias = db.tbcategorias.AsNoTracking().ToList();
+            return Ok(listCategorias);
         }
 
         /// <summary>

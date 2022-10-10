@@ -18,9 +18,10 @@ namespace api.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        public IQueryable<tbcategorias> ListaProdutos()
+        public IHttpActionResult ListaProdutos()
         {
-            return ((IQueryable<tbcategorias>)(from p in db.tbprodutos orderby p.ProdutoID descending select new { p, fotos = db.tbprodutofotos.Where(f => f.ProdutoID == p.ProdutoID) }));
+            var listProdutos = (from p in db.tbprodutos orderby p.ProdutoID descending select new { p, fotos = db.tbprodutofotos.Where(f => f.ProdutoID == p.ProdutoID) }).ToList();
+            return Ok(listProdutos);
         }
 
         /// <summary>
@@ -33,7 +34,7 @@ namespace api.Controllers
         {
             try
             {
-                var oProduto = (from p in db.tbprodutos where p.ProdutoID == id select new { p, fotos = db.tbprodutofotos.Where(f => f.ProdutoID == p.ProdutoID) });
+                var oProduto = (from p in db.tbprodutos where p.ProdutoID == id select new { p, fotos = db.tbprodutofotos.Where(f => f.ProdutoID == p.ProdutoID) }).FirstOrDefault();
                 if (oProduto == null)
                 {
                     return NotFound();
