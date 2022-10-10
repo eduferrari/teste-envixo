@@ -1,0 +1,104 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>api</name>
+    </assembly>
+    <members>
+        <member name="M:api.Controllers.CategoriaController.ListaCategorias">
+            <summary>
+            Recupera todas as categorias do banco de dados
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:api.Controllers.CategoriaController.SelecionaCategoria(System.Int32)">
+            <summary>
+            Recupera a informação de uma determinada categoria
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:api.Controllers.CategoriaController.SalvaCategoria">
+            <summary>
+            Salva uma categoria no banco de dados
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:api.Controllers.CategoriaController.AtualizaCategoria(System.Int32)">
+            <summary>
+            Atualiza os dados de uma determinada categoria
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:api.Controllers.CategoriaController.DeletaCategoria(System.Int32)">
+            <summary>
+            Deleta uma determinada categoria do banco de dados
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:api.Controllers.ProdutoController.ListaProdutos">
+            <summary>
+            Recupera todos os produtos do banco de dados
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:api.Controllers.ProdutoController.SelecionaProduto(System.Int64)">
+            <summary>
+            Recupera as informações de im determinado produto
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:api.Controllers.ProdutoController.SalvaProduto">
+            <summary>
+            Adiciona um produto no banco de dados
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:api.Controllers.ProdutoController.AtualizaProduto(System.Int32)">
+            <summary>
+            Usado para alterar as informações de um determinado produto
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:api.Controllers.ProdutoController.DeletaProduto(System.Int32)">
+            <summary>
+            Deleta um determiando produto
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:api.Controllers.ProtudosFotosController.DeletaFotoProduto(System.Int32,System.Int32)">
+            <summary>
+            Deleta uma determiada foto cadastrada no produto
+            </summary>
+            <param name="produtoId"></param>
+            <param name="fotoId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:api.Controllers.TokenController.GetToken">
+            <summary>
+            Cria um token de autenticação para ser usado nas requisições da API
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:api.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:api.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:api.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+    </members>
+</doc>

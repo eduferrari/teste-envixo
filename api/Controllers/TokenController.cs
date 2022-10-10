@@ -11,7 +11,6 @@ using System.Web.Http;
 
 namespace api.Controllers
 {
-    [Route("api/[controller]")]
     public class TokenController : ApiController
     {
         private dbEntities db = new dbEntities();
