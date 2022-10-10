@@ -18,21 +18,9 @@ namespace api.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        public IHttpActionResult GetProdutos()
+        public IQueryable<tbcategorias> ListaProdutos()
         {
-            try
-            {
-                var listProdutos = (from p in db.tbprodutos orderby p.ProdutoID descending select new { p, fotos = db.tbprodutofotos.Where(f => f.ProdutoID == p.ProdutoID) }).ToList();
-                return Ok(listProdutos);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
-            finally
-            {
-                Dispose(true);
-            }
+            return ((IQueryable<tbcategorias>)(from p in db.tbprodutos orderby p.ProdutoID descending select new { p, fotos = db.tbprodutofotos.Where(f => f.ProdutoID == p.ProdutoID) }));
         }
 
         /// <summary>
@@ -41,7 +29,7 @@ namespace api.Controllers
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpGet]
-        public IHttpActionResult GetProduto(long id)
+        public IHttpActionResult SelecionaProduto(long id)
         {
             try
             {
@@ -68,7 +56,7 @@ namespace api.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpPost]
-        public IHttpActionResult PostProduto()
+        public IHttpActionResult SalvaProduto()
         {
             try
             {
@@ -115,7 +103,7 @@ namespace api.Controllers
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpPut]
-        public IHttpActionResult PutProduto(int id)
+        public IHttpActionResult AtualizaProduto(int id)
         {
             try
             {
@@ -161,7 +149,7 @@ namespace api.Controllers
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpDelete()]
-        public IHttpActionResult DeleteProduto(int id)
+        public IHttpActionResult DeletaProduto(int id)
         {
             try
             {
@@ -174,43 +162,6 @@ namespace api.Controllers
                         if (db.SaveChanges() > 0)
                         {
                             return Ok("Produto deletado com sucesso!");
-                        }
-                        else return BadRequest();
-                    }
-                    else return NotFound();
-                }
-                else return NotFound();
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
-            finally
-            {
-                Dispose(true);
-            }
-        }
-
-        /// <summary>
-        /// Deleta uma determiada foto cadastrada no produto
-        /// </summary>
-        /// <param name="produtoId"></param>
-        /// <param name="fotoId"></param>
-        /// <returns></returns>
-        [HttpDelete]
-        public IHttpActionResult DeleteFotoProduto(int produtoId, int fotoId)
-        {
-            try
-            {
-                if (ProdutoExists(produtoId))
-                {
-                    var oFoto = db.tbprodutofotos.Where(r => r.ProdutoID == produtoId && r.FotoID == fotoId).FirstOrDefault();
-                    if (oFoto != null)
-                    {
-                        db.Entry(oFoto).State = EntityState.Deleted;
-                        if (db.SaveChanges() > 0)
-                        {
-                            return Ok("Foto vinculada ao produto(id: " + produtoId + ") deletada com sucesso!");
                         }
                         else return BadRequest();
                     }

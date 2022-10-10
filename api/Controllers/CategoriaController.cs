@@ -17,7 +17,7 @@ namespace api.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        public IQueryable<tbcategorias> GetCategorias()
+        public IQueryable<tbcategorias> ListaCategorias()
         {
             return db.tbcategorias.AsNoTracking();
         }
@@ -28,7 +28,7 @@ namespace api.Controllers
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpGet]
-        public IHttpActionResult GetCategoria(int id)
+        public IHttpActionResult SelecionaCategoria(int id)
         {
             try
             {
@@ -52,7 +52,7 @@ namespace api.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpPost]
-        public IHttpActionResult PostCategoria()
+        public IHttpActionResult SalvaCategoria()
         {
             try
             {
@@ -91,7 +91,7 @@ namespace api.Controllers
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpPut]
-        public IHttpActionResult PutCategoria(int id)
+        public IHttpActionResult AtualizaCategoria(int id)
         {
             try
             {
@@ -136,7 +136,7 @@ namespace api.Controllers
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpDelete]
-        public IHttpActionResult DeleteCategoria(int id)
+        public IHttpActionResult DeletaCategoria(int id)
         {
             try
             {
