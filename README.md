@@ -66,7 +66,7 @@ $.ajax(settings).done(function (response) {
 });
 ~~~
    
-### Exemplo de como listar os produtos
+### Exemplo de como adicionar um produto
 ~~~Script
 var form = new FormData();
 form.append("Titulo", "Teste produto add 04");
