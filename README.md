@@ -66,3 +66,35 @@ $.ajax(settings).done(function (response) {
 });
 ~~~
    
+### Exemplo de como listar os produtos
+~~~Script
+var form = new FormData();
+form.append("Titulo", "Teste produto add 04");
+form.append("Descricao", "Industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.");
+form.append("Status", "1");
+form.append("Categorias", "1,2");
+form.append("Tags", "#info, #informativa, #notebook, #mobilidade, #homeoffice");
+form.append("Preco", "2.800");
+form.append("PrecoPromocional", "2.600");
+form.append("files", fileInput.files[0], "/C:/Users/eduar/iCloudPhotos/Photos/Diversas/6tag_290516-005357.jpg");
+form.append("files", fileInput.files[0], "/C:/Users/eduar/iCloudPhotos/Photos/Diversas/6tag_310316-212927.jpg");
+form.append("files", fileInput.files[0], "/C:/Users/eduar/iCloudPhotos/Photos/Diversas/IMG_0015.HEIC");
+form.append("files", fileInput.files[0], "/C:/Users/eduar/iCloudPhotos/Photos/Diversas/IMG_0023.HEIC");
+
+var settings = {
+  "url": "https://localhost:44385/api/Produto",
+  "method": "POST",
+  "timeout": 0,
+  "headers": {
+    "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySW5mbyI6IntcclxuICBcIklkXCI6IDEsXHJcbiAgXCJFbWFpbFwiOiBcImVkdWFyZG8uZmVycmFyaUBvdXRsb29rLmNvbVwiLFxyXG4gIFwiU2VuaGFcIjogXCI4MjdDQ0IwRUVBOEE3MDZDNEMzNEExNjg5MUY4NEU3QlwiLFxyXG4gIFwiTW9kdWxvc1wiOiBbXHJcbiAgICBcIlByb2R1dG9cIixcclxuICAgIFwiQ2F0ZWdvcmlhXCJcclxuICBdLFxyXG4gIFwiVmFsaWRhZGVcIjogXCIyMDIyLTEwLTA4VDAwOjAwOjAwXCJcclxufSIsIm5iZiI6MTY2NTE1OTk0NiwiZXhwIjoxNjY1MjQ2MzQ2LCJpYXQiOjE2NjUxNTk5NDYsImlzcyI6Imh0dHBzOi8vbG9jYWxob3N0OjQ0Mzg1IiwiYXVkIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NDQzODUifQ.iJLm9v2yE-3V7RONwDWRoPQ43lD2sAPkvs77JNIDgdk"
+  },
+  "processData": false,
+  "mimeType": "multipart/form-data",
+  "contentType": false,
+  "data": form
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+~~~
